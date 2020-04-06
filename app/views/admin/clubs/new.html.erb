@@ -1,0 +1,74 @@
+<div class="container">
+  <h1>New Club</h1>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/admin/clubs/">Dashboard</a></li>
+      <li class="breadcrumb-item active" aria-current="page">New Club</li>
+    </ol>
+  </nav>
+
+  <%= form_with model: @club, url: {action: 'create'} do %>
+    <h4>General</h4>
+    <div class="form-group">
+      <%= label_tag(:name, 'Name:')%>
+      <%= text_field_tag(:name, value = nil, options = { class: 'form-control', required: true })  %>
+    </div>
+    <div class="form-group">
+      <%= label_tag(:description, 'Description:')%>
+      <%= text_area_tag(:description, value = nil, options = { class: 'form-control', rows:'3' }) %>
+    </div>
+    <div class="custom-control custom-switch mb-2 mr-sm-2">
+      <%= check_box_tag(:status, 1, false, class: 'custom-control-input') %>
+      <%= label_tag(:status, 'Active', options = {class: 'custom-control-label'}) %>
+    </div>
+    <hr class="style4">
+
+    <h4>Address</h4>
+    <div class="form-group">
+      <%= label_tag(:address_line_one, 'Street Address') %>
+      <%= text_field_tag(:address_line_one, value = nil, options = { class: 'form-control', placeholder: '1234 Main St' })  %>
+    </div>
+    <div class="form-group">
+      <%= label_tag(:address_line_two, 'Address 2') %>
+      <%= text_field_tag(:address_line_two, value = nil, options = { class: 'form-control' })  %>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <%= label_tag(:city, 'City') %>
+        <%= text_field_tag(:city, value = nil, options = { class: 'form-control' })  %>
+      </div>
+      <div class="form-group col-md-4">
+        <%= label_tag(:state, 'State') %>
+        <%= select_tag(:state, options_for_select(us_states), options = {class:'custom-select' })  %>
+      </div>
+      <div class="form-group col-md-2">
+        <label for="inputZip">Zip</label>
+        <input type="text" class="form-control" id="inputZip">
+      </div>
+    </div>
+    <hr class="style4">
+
+    <h4>Social Media</h4>
+    <div class="form-row">
+      <div class="col">
+        <%= text_field_tag(:social_media_url, value = nil, options = { class: 'form-control', data: {social:1}, placeholder: 'URL' })  %>
+      </div>
+      <div class="col">
+        <%= select_tag(:social_media_name, options_for_select([ 'Facebook', 'Instagram', 'Twitter' ], "Facebook"), options = {class:'custom-select' })  %>
+      </div>
+      <div class="col">
+        <button name="button" type="button" class="btn btn-primary"><strong><i class="fas fa-plus"></i></strong></button>
+      </div>
+    </div>
+    <hr class="style4">
+
+    <div class="form-inline buttons">
+      <div class="mb-2 mr-sm-2">
+        <%= button_tag 'Submit', class: 'btn btn-primary' %>
+        <%= button_tag 'Cancel', class: 'btn btn-secondary' %>
+      </div>
+    </div>
+  <%end %>
+</div>
+
+

@@ -1,0 +1,24 @@
+.buttons{
+  float: right;
+}
+.section {
+  margin: 3px;
+}
+.section-title {
+  display: inline-block;
+}
+.section-title-new{
+  float: right;
+  text-align: right;
+}
+hr.style4 {
+  background-color: #fff;
+  border-top: 2px dashed #8c8b8b;
+  margin-bottom: 20px;
+}
+hr.style5 {
+  background-color: #fff;
+  border-top: 2px dashed #8c8b8b;
+  margin-bottom: 50px;
+}
+

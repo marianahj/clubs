@@ -1,0 +1,93 @@
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      <h1>Dashboard</h1>
+      <p>Welcome to your Club Manager.</p>
+    </div>
+    <div class="col-4">Your Profile</div>
+  </div>
+
+  <div class="col-12">
+    <div class="col-8 section-title">
+      <h3>Your Clubs</h3>
+    </div>
+    <div class="col-4 section-title-new">
+      <a href="/admin/clubs/new">
+        <i class="fas fa-plus"></i> New Club
+      </a>
+    </div>
+  </div>
+
+  <div class="col-12">
+    <ul class="list-group list-group-flush">
+      <%- @clubs.each do |club| %>
+        <li class="list-group-item">
+          <a href='/admin/clubs/<%= club.id.to_s %>'><%= club.name %></a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <hr class="style5">
+
+  <div class="col-12">
+    <div class="col-8 section-title">
+      <h3>Your Groups</h3>
+    </div>
+    <div class="col-4 section-title-new">
+      <a href="/admin/clubs/new">
+        <i class="fas fa-plus"></i> New Group
+      </a>
+    </div>
+  </div>
+  <div class="col-12">
+    <ul class="list-group list-group-flush">
+      <%- @clubs.each do |club| %>
+        <li class="list-group-item">
+          <a href='/admin/clubs/<%= club.id.to_s %>'><%= club.name %></a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <hr class="style5">
+
+  <div class="col-12">
+    <div class="col-8 section-title">
+      <h3>Your Events</h3>
+    </div>
+    <div class="col-4 section-title-new">
+      <a href="/admin/clubs/new">
+        <i class="fas fa-plus"></i> New Event
+      </a>
+    </div>
+  </div>
+  <div class="col-12">
+    <ul class="list-group list-group-flush">
+      <%- @clubs.each do |club| %>
+        <li class="list-group-item">
+          <a href='/admin/clubs/<%= club.id.to_s %>'><%= club.name %></a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <hr class="style5">
+
+  <div class="col-12">
+    <div class="col-8 section-title">
+      <h3>Your News</h3>
+    </div>
+    <div class="col-4 section-title-new">
+      <a href="/admin/clubs/new">
+        <i class="fas fa-plus"></i> New News
+      </a>
+    </div>
+  </div>
+  <div class="col-12">
+    <ul class="list-group list-group-flush">
+      <%- @clubs.each do |club| %>
+        <li class="list-group-item">
+          <a href='/admin/clubs/<%= club.id.to_s %>'><%= club.name %></a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
